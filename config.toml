@@ -1,0 +1,38 @@
+[search]
+cities = ["Chicago", "New York City", "Richmond", "Minneapolis"]
+minimum_base_salary = 80000
+include_unknown_salary = true
+recipient = "chris.wan.1201@gmail.com"
+# Do not infer experience equivalence from internship dates alone.
+maximum_required_years = 3
+
+[profile]
+name = "Chris Wan"
+skills = ["financial modeling", "DCF", "pro forma", "Excel", "Python", "SQL", "lease abstraction", "market research", "cash flow", "valuation", "underwriting", "portfolio management"]
+
+# Public ATS board identifiers. Companies may move or retire these feeds;
+# failures are reported, never interpreted as zero available jobs.
+[[sources]]
+provider = "greenhouse"
+company = "Fundrise"
+board = "fundrise"
+
+[[sources]]
+provider = "greenhouse"
+company = "RealtyMogul"
+board = "realtymogul"
+
+[[sources]]
+provider = "greenhouse"
+company = "Juniper Square"
+board = "junipersquare"
+
+[[sources]]
+provider = "greenhouse"
+company = "Yieldstreet"
+board = "yieldstreet"
+
+[[sources]]
+provider = "greenhouse"
+company = "StepStone Group"
+board = "stepstonegroup"
