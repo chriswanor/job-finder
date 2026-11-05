@@ -10,29 +10,34 @@ maximum_required_years = 3
 name = "Chris Wan"
 skills = ["financial modeling", "DCF", "pro forma", "Excel", "Python", "SQL", "lease abstraction", "market research", "cash flow", "valuation", "underwriting", "portfolio management"]
 
-# Public ATS board identifiers. Companies may move or retire these feeds;
-# failures are reported, never interpreted as zero available jobs.
+# Public ATS feeds verified during live execution. Coverage is limited to these employers.
+
 [[sources]]
-provider = "greenhouse"
+provider = "lever"
 company = "Fundrise"
 board = "fundrise"
 
 [[sources]]
 provider = "greenhouse"
-company = "RealtyMogul"
-board = "realtymogul"
-
-[[sources]]
-provider = "greenhouse"
-company = "Juniper Square"
-board = "junipersquare"
-
-[[sources]]
-provider = "greenhouse"
-company = "Yieldstreet"
-board = "yieldstreet"
-
-[[sources]]
-provider = "greenhouse"
 company = "StepStone Group"
-board = "stepstonegroup"
+board = "stepstone"
+
+[[sources]]
+provider = "greenhouse"
+company = "Roofstock"
+board = "roofstock"
+
+[[sources]]
+provider = "greenhouse"
+company = "Kiavi"
+board = "kiavi"
+
+[[sources]]
+provider = "greenhouse"
+company = "Figure"
+board = "figure"
+
+[[sources]]
+provider = "greenhouse"
+company = "Point72"
+board = "point72"

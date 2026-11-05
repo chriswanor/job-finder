@@ -34,6 +34,8 @@ class MatchingTests(unittest.TestCase):
                  dict(location='Remote - New York'), dict(location='Richmond, CA'),
                  dict(location='Boston, MA'), dict(description='Real estate Excel. Salary $70,000 - $95,000.'),
                  dict(description='Real estate. 5+ years of experience required.'),
+                 dict(description='Real estate. What is required: 7+ years of mortgage valuation experience.'),
+                 dict(title='Investment Services Emerging Talent Network'),
                  dict(description='Real estate acquisitions with cold calling and commission-only pay.'),
                  dict(title='Software Engineer'), dict(title='Investor Relations Associate')]
         for changes in cases:

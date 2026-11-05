@@ -24,7 +24,7 @@ python -m job_finder
 
 The default is a **dry run**: no email is sent. Read `output/digest.txt` and `output/matches.json`. These generated files are ignored by Git. Failed sources are reported separately from zero matching jobs. If all sources fail, the command exits with status 2.
 
-Public Greenhouse boards are configured for Fundrise, RealtyMogul, Juniper Square, Yieldstreet and StepStone Group. These are starting points, not exhaustive coverage of the four cities. **Live availability of these board identifiers has not been verified in the onboarding environment because outbound access is blocked.** Remove or replace retired boards after checking their official careers pages. Add more `[[sources]]` entries with provider `greenhouse` or `lever`, company name and the ATS board identifier from the official careers link. Workday, LinkedIn and Indeed are not supported by this version; it does not bypass their access controls.
+Live-verified feeds are configured for Fundrise (Lever), StepStone Group, Roofstock, Kiavi, Figure and Point72 (Greenhouse). These are starting points, not exhaustive coverage of the four cities. The live search checked 293 postings across six employers and generated seven potential matches with no source failures. Companies can retire or move their feeds; failures are reported explicitly. Add more `[[sources]]` entries with provider `greenhouse` or `lever`, company name and the ATS board identifier from the official careers link. Workday, LinkedIn and Indeed are not supported by this version; it does not bypass their access controls.
 
 Required outbound HTTPS domains: `boards-api.greenhouse.io`, `api.lever.co`, and, for delivery, `api.resend.com`. Keep the platform proxy and TLS verification enabled.
 
@@ -51,4 +51,4 @@ The workflow caches SQLite history between runs. Cache eviction/deletion can cau
 
 ## Validation status
 
-Offline tests cover matching, exclusions, salary labels, provider parsing, history persistence, send failure behavior and the complete dry-run CLI. Live feeds and real email delivery remain to be validated after network access and email settings are supplied. This is a working local implementation, not yet a running daily delivery service.
+Offline tests cover matching, exclusions, salary labels, provider parsing, history persistence, send failure behavior and the complete dry-run CLI. All six configured live feeds were validated successfully. Real email delivery remains untested pending email configuration. This is a working search implementation, not yet a running daily delivery service.

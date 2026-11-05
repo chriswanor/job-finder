@@ -113,7 +113,7 @@ def evaluate(job, config):
     title = job.title.lower()
     location = job.location.lower()
     description = job.description.lower()
-    if re.search(EXCLUDED, title) or re.search(SENIOR, title):
+    if re.search(EXCLUDED, title) or re.search(SENIOR, title) or re.search(r"\b(?:talent network|talent pool|fellowship)\b", title):
         return None
     if re.search(r"\bremote\b", location) and not re.search(r"\bhybrid\b", location):
         return None
@@ -128,8 +128,10 @@ def evaluate(job, config):
         r"(?<!\w)" + re.escape(s.lower()) + r"(?!\w)", description)]
     if not relevant_domain and (not re.search(r"\b(?:financial|investment|data|portfolio)\b", title) or len(skills) < 2):
         return None
-    for match in re.finditer(r"\b(\d+)\s*(?:[-–]\s*\d+)?\+?\s+years?\s+(?:of\s+)?(?:relevant\s+|professional\s+)?experience", description):
+    for match in re.finditer(r"\b(\d+)\s*(?:[-–]\s*\d+)?\+?\s+years?\s+(?:of\s+)?(?:[a-z-]+\s+){0,5}experience", description):
         context = description[max(0, match.start()-30):match.end()+40]
+        if re.search(r"building on|firm|company|founded|history", context):
+            continue
         if "preferred" not in context and int(match.group(1)) > search["maximum_required_years"]:
             return None
     salary = salary_status(job.description, search["minimum_base_salary"])
